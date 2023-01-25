@@ -2,6 +2,7 @@ import pygame
 from settings import *
 from bubble_sort import *
 from insertion_sort import *
+from selection_sort import *
 
 
 class Plot:
@@ -10,10 +11,14 @@ class Plot:
         self.screen = pygame.display.set_mode((WIDTH, HEIGHT))
         self.clock = pygame.time.Clock()
         self.sort_type = sort_type
+
         if self.sort_type == "Bubble Sort":
             self.generator = bubble_sort(samples)
         elif self.sort_type == "Insertion Sort":
             self.generator = insertion_sort(samples)
+        elif self.sort_type == "Selection Sort":
+            self.generator = selection_sort(samples)
+
         self.sorted_list = None
         pygame.display.set_caption(sort_type)
 
